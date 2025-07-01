@@ -1,0 +1,28 @@
+FROM ubuntu:22.04
+
+# 安装基础工具
+RUN apt update && apt install -y \
+    build-essential \
+    gdb \
+    cmake \
+    vim \
+    git \
+    make \
+    sudo \
+    clang \
+    clang-format
+
+# 创建开发用户和目录
+RUN useradd -m -s /bin/bash developer && \
+    echo "developer:123" | chpasswd && \
+    echo "developer ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+
+RUN mkdir -p /home/developer/dev && \
+    chown developer:developer /home/developer/dev
+
+# 设置工作目录和用户
+WORKDIR /home/developer/dev
+USER developer
+
+# 设置容器入口点为bash（常驻）
+ENTRYPOINT ["/bin/bash"]
