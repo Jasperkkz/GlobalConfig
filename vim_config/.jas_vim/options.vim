@@ -1,7 +1,7 @@
 
 " 加载基本配置
-source ~/.JasVim/mswin.vim
-source ~/.JasVim/base_options.vim
+source ~/.jas_vim/mswin.vim
+source ~/.jas_vim/base_options.vim
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General设置

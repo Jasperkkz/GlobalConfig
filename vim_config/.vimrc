@@ -3,7 +3,7 @@
 
 let g:jas_scene = 'gvim'
 
-source ~/.JasVim/options.vim
+source ~/.jas_vim/options.vim
 
 " """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " " 插件安装
