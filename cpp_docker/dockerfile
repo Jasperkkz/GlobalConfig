@@ -1,22 +1,26 @@
-FROM ubuntu:22.04
-
+FROM homebrew/ubuntu22.04:latest
 
 # 安装基础工具
+USER root
+
 RUN apt update && apt install -y \
+    gcc \
+    g++ \
     build-essential \
     gdb \
-    cmake \
     vim \
     git \
+    cmake \
     make \
     sudo \
     clang \
     clang-format
 
-# 创建开发用户和目录
-RUN useradd -m -s /bin/bash developer && \
-    echo "developer:123" | chpasswd && \
-    echo "developer ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/developer && chmod 440 /etc/sudoers.d/developer
+#创建开发用户和目录
+RUN useradd -m -s /bin/bash -U developer \
+    && echo "developer:123" | chpasswd \
+    && echo "developer ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/developer \
+    && chmod 440 /etc/sudoers.d/developer
 
 RUN mkdir -p /home/developer/dev && \
     chown developer:developer /home/developer/dev
