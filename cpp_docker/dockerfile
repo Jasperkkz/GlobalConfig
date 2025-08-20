@@ -1,4 +1,4 @@
-FROM homebrew/ubuntu22.04:latest
+FROM  ubuntu:22.04
 
 # 安装基础工具
 USER root
