@@ -242,9 +242,9 @@ set shortmess=atI
 
 if has('gui_running')
 	" 取消工具栏
-	set guioptions-=T
+	" set guioptions-=T
     " 取消菜单栏
-	set guioptions-=m
+	" set guioptions-=m
     " 如果窗口垂直分隔，将在编辑器左侧放置滚动条
 	"set guioptions-=L
     " 取消垂直滚动条
@@ -256,8 +256,8 @@ if has('gui_running')
 	" 设置字体
 	set guifont=黑体:h14
 	" 窗口大小
-	winpos 1000 500
-	set lines=50 columns=148
+	winpos 1500 300
+	set lines=40 columns=100
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
